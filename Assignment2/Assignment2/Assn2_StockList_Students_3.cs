@@ -33,7 +33,7 @@ namespace Assignment_2
     {
       int similarityIndex = 0;
 
-     // write your implementation here
+     // write your implementation here and check
             StockNode current = this.head;
             StockNode compare = listToCompare.head;
             if (current.StockHolding.Name.Equals(compare.StockHolding.Name))
