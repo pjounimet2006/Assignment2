@@ -32,6 +32,37 @@ namespace Assignment_2
     public int Similarity(StockList listToCompare)
     {
       
+int similarityIndex = 0;
+
+     // write your implementation here and check
+            StockNode current = this.head;
+            StockNode compare = listToCompare.head;
+            if (current.StockHolding.Name.Equals(compare.StockHolding.Name))
+            {
+                similarityIndex = similarityIndex + 1;
+            }
+
+            //For each Stocknode in list, compare to the previous to see who has greater holdings
+            while (current.Next != null)
+            {
+                current = current.Next;
+                compare = listToCompare.head;
+                if (current.StockHolding.Name.Equals(compare.StockHolding.Name))
+                {
+                    similarityIndex = similarityIndex + 1;
+                }
+
+                while (compare.Next != null)
+                {
+                    compare = compare.Next;
+                    if (current.StockHolding.Name.Equals(compare.StockHolding.Name))
+                    {
+                        similarityIndex = similarityIndex + 1;
+                    }
+
+                }
+
+           }
 
             return similarityIndex;
     }
